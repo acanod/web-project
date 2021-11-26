@@ -8,10 +8,10 @@ export const createRoles = async () => {
         // Si ya existen documentos guardar el numero
         const count = await Role.estimatedDocumentCount();
 
-        // check for existing roles
+        // Comprobar si existen roles
         if (count > 0) return;
 
-        // crear roles por defecto
+        // Crear roles por defecto
         const values = await Promise.all([
             new Role({ name: "user" }).save(),
             new Role({ name: "moderator" }).save(),
