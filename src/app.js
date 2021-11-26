@@ -12,13 +12,15 @@ const app = express();
 createRoles();
 createAdmin();
 
-//Crear nueva variable en app
+// Crear nueva variable en app
 app.set('pkg', pkg);
 
-//Desarrollar en dev
+// Indicar el puerto de escucha
+app.set('port', process.env.PORT || 3000);
+// Desarrollar en dev
 app.use(morgan('dev'));
 
-//Para que nuestra aplicción entienda los objetos json
+// Para que nuestra aplicción entienda los objetos json
 app.use(express.json());
 
 app.get('/', (req, res) => {
