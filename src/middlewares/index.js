@@ -1,4 +1,6 @@
-import * as authJwt from "./authJwt";
-import * as verifySignup from "./verifySignup";
+import app from "./app";
+import './database';
 
-export { authJwt, verifySignup };
+app.listen(app.get("port"));
+
+console.log("Server on port", app.get('port'));
