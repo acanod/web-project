@@ -4,11 +4,14 @@
   "description": "A Company REST API with authentication and authorization",
   "main": "src/index.js",
   "scripts": {
-    "build": "babel src --out-dir build",
     "dev": "nodemon src/index.js --exec babel-node",
+    "build": "node src --out-dir build",
     "start": "node build/index.js"
   },
-  "keywords": ["server", "API"],
+  "keywords": [
+    "server",
+    "API"
+  ],
   "author": "Alejandro Cano",
   "license": "ISC",
   "dependencies": {
