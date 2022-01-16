@@ -1,6 +1,9 @@
 {
   "name": "web-project",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.17.3"
+  },
   "description": "A Company REST API with authentication and authorization",
   "main": "src/index.js",
   "scripts": {
