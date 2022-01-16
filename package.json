@@ -2,14 +2,14 @@
   "name": "web-project",
   "version": "1.0.0",
   "engines": {
-    "node": "14.17.3"
+    "node": "16.13.2"
   },
   "description": "A Company REST API with authentication and authorization",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
     "build": "node src --out-dir build",
-    "start": "node build/index.js"
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js"
   },
   "keywords": [
     "server",
