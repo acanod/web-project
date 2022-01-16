@@ -34,7 +34,7 @@ export const signUp = async (req, res) => {
             expiresIn: 86400 //24 horas
         });
 
-        res.status(200).json({ token });
+        res.status(201).json({ token });
     } catch (error) {
         console.log(error);
         return res.status(500).json(error);
@@ -66,6 +66,7 @@ export const signIn = async (req, res) => {
 
         res.json({ token });
     } catch (error) {
+        res.status(500);
         console.log(error);
     }
 }
