@@ -4,7 +4,13 @@ const productSchema = new Schema({
     name: String,
     category: String,
     price: Number,
-    imgURL: String
+    imgURL: String,
+    comment: [
+        {
+            ref: "Comment",
+            type: Schema.Types.ObjectId,
+        }
+    ]
 }, {
     timestamps: true,
     versionKey: false
