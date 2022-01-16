@@ -3,3 +3,6 @@ node_modules
 
 # Environment variables
 .env
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
