@@ -5,6 +5,7 @@
     "node": "16.13.2"
   },
   "description": "A Company REST API with authentication and authorization",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
