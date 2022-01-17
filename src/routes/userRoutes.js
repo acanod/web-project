@@ -50,6 +50,24 @@ const router = Router();
   *   description: The users in company API
   */
 
+/**
+ * @swagger
+ * paths:
+ *  /api/users/:
+ *      get:
+ *          summary: Returns a list of users
+ *          tags: [Users]
+ *          description: All available users are sent
+ *          responses:
+ *              '200':
+ *                  description: Shipping of all users
+ *          content:
+ *               application/json:
+ *                  schema:
+ *                      type: array
+ *                      items:
+ *                          $ref: '#components/schemas/Product'
+ */
 router.get("/", [authJwt.verifyToken, authJwt.isModerator], usersCtrl.getUsers);
 
 router.get("/:userId", [authJwt.verifyToken, authJwt.isModerator], usersCtrl.getUserById);
