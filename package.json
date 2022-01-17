@@ -3,16 +3,11 @@
   "version": "1.0.0",
   "description": "A Company REST API with authentication and authorization",
   "main": "src/index.js",
-  "scripts": {
-    "dev": "nodemon src/index.js --exec babel-node",
-    "build": "node src --out-dir build",
-    "start": "babel-node src/index.js"
-  },
+  "author": "Alejandro Cano",
   "keywords": [
     "server",
     "API"
   ],
-  "author": "Alejandro Cano",
   "license": "ISC",
   "dependencies": {
     "babel-preset-env": "^1.7.0",
@@ -33,5 +28,10 @@
     "@babel/node": "^7.16.0",
     "@babel/preset-env": "^7.16.8",
     "nodemon": "^2.0.14"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js --exec babel-node",
+    "build": "node src --out-dir build",
+    "start": "babel-node src/index.js"
   }
 }
