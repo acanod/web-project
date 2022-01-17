@@ -10,7 +10,6 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -30,8 +29,8 @@
     "nodemon": "^2.0.14"
   },
   "scripts": {
-    "dev": "nodemon src/index.js --exec babel-node",
-    "build": "node src --out-dir build",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "babel src --out-dir build",
     "start": "babel-node src/index.js",
     "heroku-postbuild": "npm run build"
   }
