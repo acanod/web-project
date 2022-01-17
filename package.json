@@ -1,16 +1,12 @@
 {
   "name": "web-project",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.13.2"
-  },
   "description": "A Company REST API with authentication and authorization",
-  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
     "build": "node src --out-dir build",
-    "start": "babel-node build/index.js"
+    "start": "babel-node src/index.js"
   },
   "keywords": [
     "server",
@@ -19,8 +15,7 @@
   "author": "Alejandro Cano",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.16.0",
-    "bcrypt": "^5.0.1",
+    "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -33,9 +28,10 @@
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
     "@babel/node": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-env": "^7.16.8",
     "nodemon": "^2.0.14"
   }
 }
