@@ -107,7 +107,7 @@ router.get('/:productId', productsCtrl.getProductById);
  *          description: Create a new product
  *          responses:
  *              '200':
- *                  description: OK
+ *                  description: Product created
  */
 router.post('/', [authJwt.verifyToken, authJwt.isModerator], productsCtrl.createProduct);
 
@@ -118,9 +118,18 @@ router.post('/', [authJwt.verifyToken, authJwt.isModerator], productsCtrl.create
  *      put:
  *          summary: update a product
  *          tags: [Products]
+ *          description: The desired object is updated
+ *          parameters:
+ *            - in: product id
+ *              name: productId
+ *              description: Product id
+ *              schema:
+ *                  type: string
+ *                  required: true
+ *                  description: The product id
  *          responses:
  *              '200':
- *                  description: OK
+ *                  description: Product updated
  */
 router.put('/:productId', [authJwt.verifyToken, authJwt.isModerator], productsCtrl.updateProductById);
 
@@ -131,9 +140,17 @@ router.put('/:productId', [authJwt.verifyToken, authJwt.isModerator], productsCt
  *      delete:
  *          summary: delete a product
  *          tags: [Products]
+ *          parameters:
+ *            - in: product id
+ *              name: productId
+ *              description: Product id
+ *              schema:
+ *                  type: string
+ *                  required: true
+ *                  description: The product id
  *          responses:
  *              '200':
- *                  description: OK
+ *                  description: Product deleted
  */
 router.delete('/:productId', [authJwt.verifyToken, authJwt.isAdmin], productsCtrl.deleteProductById);
 

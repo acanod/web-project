@@ -70,10 +70,53 @@ const router = Router();
  */
 router.get("/", [authJwt.verifyToken, authJwt.isModerator], usersCtrl.getUsers);
 
+/**
+ * @swagger
+ * paths:
+ *  /api/users/{userId}:
+ *      get:
+ *          summary: Returns one user
+ *          tags: [Users]
+ *          description: The desired object is returned
+ *          parameters:
+ *            - in: user id
+ *              name: userId
+ *              description: User id
+ *              schema:
+ *                  type: string
+ *                  required: true
+ *                  description: The user id
+ *          responses:
+ *              '200':
+ *                  description: User is returned
+ */
 router.get("/:userId", [authJwt.verifyToken, authJwt.isModerator], usersCtrl.getUserById);
 
+/**
+ * @swagger
+ * paths:
+ *  /api/users/:
+ *      post:
+ *          summary: Create a user
+ *          tags: [Users]
+ *          description: Create a new user
+ *          responses:
+ *              '200':
+ *                  description: OK
+ */
 router.post("/", [authJwt.verifyToken, authJwt.isAdmin, verifySignup.checkDuplicateUsernameOrEmail], usersCtrl.createUser);
 
+/**
+ * @swagger
+ * paths:
+ *  /api/users/{userId}:
+ *      delete:
+ *          summary: delete a user
+ *          tags: [Users]
+ *          responses:
+ *              '200':
+ *                  description: OK
+ */
 router.delete("/:userId", [authJwt.verifyToken, authJwt.isAdmin], usersCtrl.deleteUserById);
 
 export default router;
