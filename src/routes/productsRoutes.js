@@ -69,7 +69,7 @@ const router = Router();
  *          content:
  *               application/json:
  *                  schema:
- *                      type: array
+ *                      type: object
  *                      items:
  *                          $ref: '#components/schemas/Product'
  */
@@ -105,6 +105,13 @@ router.get('/:productId', productsCtrl.getProductById);
  *          summary: Create a product
  *          tags: [Products]
  *          description: Create a new product
+ *          parameters:
+ *            - in: header
+ *              name: x-access-token
+ *              description: Access token
+ *              required: true
+ *              schema:
+ *                type: string
  *          responses:
  *              '200':
  *                  description: Product created
